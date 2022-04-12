@@ -2,6 +2,7 @@
 import cors from 'cors'
 import express from 'express'
 import { join } from 'path'
+import helmet from 'helmet'
 import 'module-alias/register'
 
 // Environment variables
@@ -13,7 +14,7 @@ import { REST_PORT, API_VERSION } from './envs'
 import router from '@rest/index'
 
 // Errors
-import ErrorHandler from '@errors/ErrorHandler'
+import ErrorHandler from '@utils/ErrorHandler'
 import HttpException from '@errors/httpException'
 
 // Express middlewares
@@ -21,10 +22,11 @@ const app = express()
 app.use(cors())
 app.use(express.json({ limit: '50mb' }))
 app.use(express.urlencoded({ extended: true, limit: '50mb' }))
+app.use(helmet())
 
 // Api routes
 app.use('/', express.static(join(__dirname, '../public')))
-app.use(`/api/v${API_VERSION}`, router)
+app.use(`/api/v${API_VERSION()}`, router)
 
 // Handle unknown routes
 app.all('*', (req, res, next) => {
