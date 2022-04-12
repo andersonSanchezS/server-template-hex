@@ -8,7 +8,7 @@ function ErrorHandler(err: httpException, req: Request, res: Response, next: Nex
     const message = err.message || 'Something went wrong'
 
     return res.status(status).json({
-        error: err,
+        error: true,
         status,
         message
     })
