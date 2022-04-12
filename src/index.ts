@@ -7,13 +7,13 @@ import 'module-alias/register'
 // Environment variables
 import * as dotenv from 'dotenv'
 dotenv.config()
-import { REST_PORT } from './envs'
+import { REST_PORT, API_VERSION } from './envs'
 
 // Rest Api Routes
 import router from '@rest/index'
 
 // Errors
-import ErrorHandler from '@errors/errorHandler'
+import ErrorHandler from '@errors/ErrorHandler'
 import HttpException from '@errors/httpException'
 
 // Express middlewares
@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' }))
 
 // Api routes
 app.use('/', express.static(join(__dirname, '../public')))
-app.use('/api/', router)
+app.use(`/api/v${API_VERSION}`, router)
 
 // Handle unknown routes
 app.all('*', (req, res, next) => {

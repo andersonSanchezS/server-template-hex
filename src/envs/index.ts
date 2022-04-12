@@ -46,7 +46,7 @@ export const DB_PORT = (): number => Number(process.env.DB_PORT || 3306)
  * Returns API version
  * @return {string} state
  */
-// Export const API_VERSION = () => process.env.API_VERSION || '1'
+export const API_VERSION = () => process.env.API_VERSION || '1'
 
 
 /**
