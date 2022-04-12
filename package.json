@@ -12,6 +12,8 @@
     "@graphql": "src/api/graphql",
     "@core": "src/core",
     "@dataSources": "src/dataSources",
+    "@sqlModels": "src/dataSources/lib/sequelize/models",
+    "@noSqlModels": "src/dataSources/lib/mongoDb/models",
     "@envs": "src/envs",
     "@errors": "src/errors",
     "@utils": "src/utils",

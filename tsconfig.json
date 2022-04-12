@@ -38,6 +38,12 @@
       "@dataSources/*": [
         "./dataSources/*"
       ],
+      "@sqlModels/*": [
+        "./dataSources/lib/sequelize/models/*"
+      ],
+      "@noSqlModels/*": [
+        "./dataSources/lib/mongoDb/models/*"
+      ],
       "@envs/*": [
         "./envs/*"
       ],
