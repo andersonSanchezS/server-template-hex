@@ -10,8 +10,7 @@ function ErrorHandler(err: httpException, req: Request, res: Response, next: Nex
     return res.status(status).json({
         error: err,
         status,
-        message,
-        stack: err.stack
+        message
     })
 }
 
