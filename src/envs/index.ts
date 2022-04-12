@@ -4,7 +4,7 @@ import { Dialect } from 'sequelize/types'
  * Returns development
  * @return {string} state
  */
-// Export const STAGE = () => process.env.NODE_ENV !== 'production'
+export const STAGE = () => process.env.NODE_ENV !== 'production'
 
 /**
  * Returns the name of the database
@@ -65,10 +65,10 @@ export const JWT_EXPIRED_IN = () => process.env.JWT_EXPIRED_IN || 9000 * 9000
  * Graphql port
  * @return {string} por
  */
-export const GRAPHQL_PORT = () => process.env.PORT || '4000'
+export const GRAPHQL_PORT = () => process.env.GRAPHQL_PORT || '4000'
 
 /**
- * Graphql port
+ * Rest port
  * @return {string} por
  */
-export const REST_PORT = () => process.env.PORT || '3000'
+export const REST_PORT = () => process.env.REST_PORT || '3000'

@@ -8,7 +8,8 @@
     "dev": "node_modules/.bin/ts-node-dev --respawn --notify false --prefer-ts --ignore-watch node_modules -- src/index.ts"
   },
   "_moduleAliases": {
-    "@rest": "src/api/rest"
+    "@rest": "src/api/rest",
+    "@errors": "src/errors"
   },
   "devDependencies": {
     "@types/cryptojs": "^3.1.30",

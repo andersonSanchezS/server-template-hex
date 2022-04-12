@@ -1,8 +1,9 @@
-import { Request, Response } from 'express'
-import httpException from './httpException'
+import { NextFunction, Request, Response } from 'express'
+import httpException from '@errors/httpException'
 
-function ErrorHandler(err: httpException, req: Request, res: Response
-) {
+
+function ErrorHandler(err: httpException, req: Request, res: Response, next: NextFunction) {
+
     const status = err.status || 500
     const message = err.message || 'Something went wrong'
 
