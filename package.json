@@ -9,8 +9,13 @@
   },
   "_moduleAliases": {
     "@rest": "src/api/rest",
+    "@graphql": "src/api/graphql",
+    "@core": "src/core",
+    "@dataSources": "src/dataSources",
+    "@envs": "src/envs",
     "@errors": "src/errors",
-    "@utils": "src/utils"
+    "@utils": "src/utils",
+    "@validations": "src/validations"
   },
   "devDependencies": {
     "@types/cryptojs": "^3.1.30",
